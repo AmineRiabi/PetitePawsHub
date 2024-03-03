@@ -10,15 +10,17 @@
     Spends Time With All Puppies And Ensures That They Are Well Soialized.">
 </head>
 <body>
-    <div class="loader" id="loader"></div>
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
     <span class="up"></span>  
-    <header id="header">   
+    <header>   
         <nav>
             <div class="container">
                 <ul>
-                    <li><a href="#Category">all puppies</a></li>
-                    <li><a href="#why_us">why us</a></li>
-                    <li><a href="#Contact">contact</a></li>
+                    <li><a href="#Category" class="header-links">all puppies</a></li>
+                    <li><a href="#why_us" class="header-links">why us</a></li>
+                    <li><a href="#Contact" class="header-links">contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -31,7 +33,7 @@
         </div>
         <img src="imgs/paw_dog_1.png" alt="paw_dog">  
     </header>
-    <main id="main">
+    <main>
             <section class="Section_Why_Us" id="why_us">
                 <div class="container">
                     <div class="Discrption">
@@ -208,51 +210,21 @@
                 <img src="imgs/paw_dog_4.png" alt="paw_dog">   
             </section>
     </main>
-    <footer id="footer">
+    <footer>
         <div class="container">
             <div class="content">
                 <div class="logo"><img src="imgs/puppy-dogs-logo-footer.png" alt="logo"></div>
                 <nav>
                         <ul>
-                            <li><a href="#Category">all puppies</a></li>
-                            <li><a href="#why_us">why us</a></li>
-                            <li><a href="#Contact">contact</a></li>
+                            <li><a href="#Category" class="footer-links">all puppies</a></li>
+                            <li><a href="#why_us" class="footer-links">why us</a></li>
+                            <li><a href="#Contact" class="footer-links">contact</a></li>
                         </ul>
                 </nav>
                 <span>copyrights &#169;2023 by <a target="_blank" href="https://github.com/AmineRiabi?tab=repositories">amine riabi</a> </span>
             </div>
         </div>
     </footer>
-    <script>
-        //spinner
-    window.addEventListener("load", function() {
-     document.getElementById("loader").style.display = "block"; 
-     document.getElementById("header").style.display = "none";
-        document.getElementById("main").style.display = "none";
-        document.getElementById("footer").style.display = "none";   
-    setTimeout(function() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("header").style.display = "block";
-        document.getElementById("main").style.display = "block";
-        document.getElementById("footer").style.display = "block";
-    }, 1500); 
-});
-//button show
-    document.getElementById("btn_show").onclick = function(){
-        window.location.href = "#cutyPuppies";
-    }
-    //button up
-    const up = document.querySelector(".up");
-    window.onscroll = function(){
-        window.scrollY >= 700 ? up.classList.add("show") :  up.classList.remove("show"); 
-    }
-    up.onclick = function(){
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        })
-    }
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

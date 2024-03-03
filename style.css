@@ -16,19 +16,33 @@ html{
 body{
  font-family: 'Roboto', sans-serif;
 }
-.loader {
+.loader{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-color,#ffffff);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader > .spinner {
     border: 8px solid #f3f3f3;
     border-top: 8px solid #ff851b;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 2s linear infinite;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
     -webkit-animation: spin 2s linear infinite;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 @keyframes spin {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
@@ -88,14 +102,13 @@ nav ul li a{
     font-size: 1.3rem;
     position: relative;
     padding-bottom: 0.4rem;
-    transition: 0.8s;
-    -webkit-transition: 0.8s;
-    -moz-transition: 0.8s;
-    -ms-transition: 0.8s;
-    -o-transition: 0.8s;
-
+    transition: 0.6s;
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -ms-transition: 0.6s;
+    -o-transition: 0.6s;
 }
-header nav ul li a::after{
+header nav ul li .header-links::after{
     content: "";
     width: 0%;
     height: 2px;
@@ -109,10 +122,12 @@ header nav ul li a::after{
     -ms-transition: width 0.8s;
     -o-transition: width 0.8s;
 }
-header nav ul li a:hover::after{
+header nav ul li .header-links.active::after,
+header nav ul li .header-links:hover::after{
     width: 100%;    
 }
-header nav ul li :hover{
+header nav ul li .header-links.active,
+header nav ul li .header-links:hover{
     color: #ff851b;
 }
 header .logo{
@@ -416,7 +431,6 @@ form input[type="submit"]:hover{
 }
 /* Footer */
 footer{
-    height: 40vh;
     background-color: black;
 }
 footer .content{
@@ -434,11 +448,12 @@ footer .logo img{
 footer nav ul li{
     padding: 1.5rem 1rem;
 }
-footer nav ul li :hover{
-    color:var(--green,#0f9045);
-}
-footer nav ul li a{
+footer nav ul li .footer-links{
     color: var(--grey,#5e5e5e);
+}
+footer nav ul li .footer-links.active,
+footer nav ul li .footer-links:hover{
+    color:var(--green,#0f9045);
 }
 footer span{
     color: var(--grey,#5e5e5e);
